@@ -1,0 +1,17 @@
+beautifulsoup4==4.6.0
+bokeh==0.12.13
+Flask==0.12.2
+Flask-SocketIO==2.9.2
+h5py==2.7.1
+html2text==2018.1.9
+html5lib==0.9999999
+matplotlib==2.1.0
+nltk==3.2.5
+numpy==1.12.1
+pandas==0.23.3
+Pillow==5.2.0
+requests==2.18.4
+scikit-learn==0.19.1
+scipy==0.19.1
+SQLAlchemy==1.1.13
+urllib3==1.22
