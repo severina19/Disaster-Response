@@ -1,18 +1,18 @@
-#Udacity Data Scientist Nanodegree - Disaster Response Project
+# Udacity Data Scientist Nanodegree - Disaster Response Project
 
 This repository contains the code for the disaster response project. The goal of the project is to analyze disaster data provided by Figure Eight to build a model for an API that classifies disaster messages. 
 
 To achieve this goal, an ETL pipeline and a machine learning pipeline has been build, which are integrated into a Flask web app, where the user can enter a new message and it will
 be categorized into the 36 different category.
-##ETL Pipeline
+## ETL Pipeline
 An ETL Pipline is used to Extract, Transform, and Load data. Here the raw messages from Figure Eight are read, cleaned, and then store into a SQLite database. 
 
 
-##Machine Learning Pipeline
+## Machine Learning Pipeline
 In this part, the data is split into a training set and a test set. Then a MultioutputClassifier is trained with the data coming out of the ETL Pipeline. To find the optimal parameters for the classifier, GridSearch Method is used. In the end, the final model is saved into a pickle file, which uses the messages to predict classifications.
 
 
-##How to train the model and run the web app
+## How to train the model and run the web app
 1. Place the disaster messages csv file and the disaster categories csv file from Figure Eight under the `data` folder.
 
 2. Run the following commands in the project's root directory to set up your database and model.
