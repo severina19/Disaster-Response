@@ -6,7 +6,7 @@ h5py==2.7.1
 html2text==2018.1.9
 html5lib==0.9999999
 matplotlib==2.1.0
-nltk==3.2.5
+nltk==3.4.5
 numpy==1.12.1
 pandas==0.23.3
 Pillow==5.2.0
