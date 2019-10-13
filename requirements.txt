@@ -10,7 +10,7 @@ nltk==3.2.5
 numpy==1.12.1
 pandas==0.23.3
 Pillow==5.2.0
-requests==2.18.4
+requests==2.20.0
 scikit-learn==0.19.1
 scipy==0.19.1
 SQLAlchemy==1.1.13
