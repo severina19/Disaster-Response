@@ -39,28 +39,60 @@ model = joblib.load("../models/disaster_model_best_moclassifier.pkl")
 def index():
     
     # extract data needed for visuals
-    # TODO: Below is an example - modify to extract data for your own visuals
-    genre_counts = df.groupby('genre').count()['message']
-    genre_names = list(genre_counts.index)
+    # extract data used for visualization
+    genre_request = df[df['request']==1].groupby('genre').count()['message']
+    genre_not_req = df[df['request']==0].groupby('genre').count()['message']
+    genres = list(genre_request.index)
     
-    # create visuals
-    # TODO: Below is an example - modify to create your own visuals
+    # Calculate occurance percentage of each message category 
+    cat_percentage = df.drop(columns=['id', 'message', 'original', 'genre', 'related']).sum()/len(df)
+    cat_percentage = cat_percentage.sort_values(ascending = False)
+    categories = list(cat_percentage.index)
+     
+    # visualization
     graphs = [
         {
             'data': [
                 Bar(
-                    x=genre_names,
-                    y=genre_counts
+                    x=genres,
+                    y=genre_request,
+                    name = 'Request'
+                ),
+                
+                Bar(
+                    x=genres,
+                    y=genre_not_req,
+                    name = 'Not Request'
                 )
             ],
 
             'layout': {
-                'title': 'Distribution of Message Genres',
+                'title': 'Number of Messages by Genre ',
                 'yaxis': {
                     'title': "Count"
                 },
                 'xaxis': {
                     'title': "Genre"
+                },
+                'barmode': 'group'
+            }
+        },
+        {
+            'data': [
+                Bar(
+                    x=categories,
+                    y=cat_percentage
+                )
+            ],
+
+            'layout': {
+                'title': 'Percentage of Messages by Category',
+                'yaxis': {
+                    'title': "Percentage"
+                },
+                'xaxis': {
+                    'title': "Category",
+                    'tickangle': -45
                 }
             }
         }
