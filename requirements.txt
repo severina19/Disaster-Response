@@ -1,6 +1,6 @@
 beautifulsoup4==4.6.0
 bokeh==0.12.13
-Flask==0.12.2
+Flask==1.0
 Flask-SocketIO==2.9.2
 h5py==2.7.1
 html2text==2018.1.9
